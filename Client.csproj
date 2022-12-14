@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B7F230DC-DCFC-42DE-9BE9-BD90F0567A72}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Debug</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;Release</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Client.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Tool.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BitFieldCL.cs" />
+    <Compile Include="Network\Receive\PROTOCOL_BASE_EMPTY.cs" />
+    <Compile Include="Network\Receive\PROTOCOL_BASE_SERVERLIST_ROOM_CLOSE.cs" />
+    <Compile Include="Network\Receive\PROTOCOL_BASE_SERVERLIST_ROOM_JOIN.cs" />
+    <Compile Include="Network\Receive\PROTOCOL_BASE_SERVERLIST_SUDDEN.cs" />
+    <Compile Include="Network\Send\Restriction\PROTOCOL_BASE_SERVER_MOON_LIMIT_ACK.cs" />
+    <Compile Include="Network\Send\Restriction\PROTOCOL_BASE_SERVER_FUNCTION_LIMIT_ACK.cs" />
+    <Compile Include="Network\Send\Restriction\PROTOCOL_BASE_SERVER_RATE_ACK.cs" />
+    <Compile Include="Network\Send\Restriction\PROTOCOL_BASE_SERVER_AUTHORITY_ACK.cs" />
+    <Compile Include="Network\Send\Restriction\PROTOCOL_BASE_GUILD_LIMIT_ACK.cs" />
+    <Compile Include="Network\Send\Restriction\PROTOCOL_BASE_GUILD_EXISTENCE_ACK.cs" />
+    <Compile Include="Network\Send\Restriction\PROTOCOL_BASE_GRADE_LIMIT_ACK.cs" />
+    <Compile Include="Network\Send\PROTOCOL_BASE_BROADCAST_SEND_ACK.cs" />
+    <Compile Include="Network\Send\PROTOCOL_BASE_VERCION_ACK.cs" />
+    <Compile Include="Network\Send\PROTOCOL_BASE_LEAVE_CHAT_ACK.cs" />
+    <Compile Include="Network\Send\PROTOCOL_BASE_MESSAGE_SEND_ACK.cs" />
+    <Compile Include="ServerInfo.cs" />
+    <Compile Include="LogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogForm.Designer.cs">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemoryData.cs" />
+    <Compile Include="Network\ServerManagement.cs" />
+    <Compile Include="Network\ControlCode.cs" />
+    <Compile Include="Network\Crypto.cs" />
+    <Compile Include="Network\PacketReader.cs" />
+    <Compile Include="Network\PacketSender.cs" />
+    <Compile Include="Network\Receive\PROTOCOL_BASE_SERVERLIST_MAXP_CHANGE.cs" />
+    <Compile Include="Network\Receive\PROTOCOL_BASE_CHAT_MSG.cs" />
+    <Compile Include="Network\Receive\PROTOCOL_BASE_SERVERLIST_MAP_CHANGE.cs" />
+    <Compile Include="Network\Receive\PROTOCOL_BASE_SERVERLIST_STATE_CHANGE.cs" />
+    <Compile Include="Network\Send\PROTOCOL_BASE_ENTER_CHAT_ACK.cs" />
+    <Compile Include="Network\Receive\PROTOCOL_BASE_LOGIN.cs" />
+    <Compile Include="Network\Receive\PROTOCOL_BASE_ROOMINFO.cs" />
+    <Compile Include="Network\Receive\PROTOCOL_BASE_SERVERLIST.cs" />
+    <Compile Include="Network\Receive\PROTOCOL_BASE_STATUS.cs" />
+    <Compile Include="Network\Receive\PROTOCOL_BASE_LOGIN_RQS.cs" />
+    <Compile Include="Network\Receive\PROTOCOL_BASE_SERVER_TEXT.cs" />
+    <Compile Include="Network\Send\PROTOCOL_BASE_LOGIN_ACK.cs" />
+    <Compile Include="Network\Send\PROTOCOL_BASE_P_ACK.cs" />
+    <Compile Include="Network\Send\PROTOCOL_BASE_ROOMINFO_ACK.cs" />
+    <Compile Include="Network\Send\PROTOCOL_BASE_SERVERLIST_ACK.cs" />
+    <Compile Include="Network\Send\PROTOCOL_BASE_STATUS_ACK.cs" />
+    <Compile Include="Network\Send\PROTOCOL_FIRST_PACKET_ACK.cs" />
+    <Compile Include="Network\SocketClient.cs" />
+    <Compile Include="Network\SpecialSHA.cs" />
+    <Compile Include="PlayerInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Room.cs" />
+    <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="LogForm.resx">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-4.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-5.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\12.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\13.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\14.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\15.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\17.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\18.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\21.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\22.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\23.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tool.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tool.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
